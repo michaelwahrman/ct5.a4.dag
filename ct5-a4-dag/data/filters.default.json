@@ -1,0 +1,69 @@
+{
+  "$schemaNote": "Default convolution filter library for CT5.A4.DAG. Each filter is a 2D array of floating point numbers in row x column order. 'normalize' (if true) means the kernel should be divided by the sum of its values before being applied; leave false for kernels already normalized (e.g. identity).",
+  "filters": [
+    {
+      "name": "identity",
+      "label": "Identity (no change)",
+      "rows": 3,
+      "cols": 3,
+      "normalize": false,
+      "kernel": [
+        [0, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0]
+      ]
+    },
+    {
+      "name": "blur",
+      "label": "Box Blur 5x5",
+      "rows": 5,
+      "cols": 5,
+      "normalize": true,
+      "kernel": [
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "name": "gaussian_blur",
+      "label": "Gaussian Blur 5x5",
+      "rows": 5,
+      "cols": 5,
+      "normalize": true,
+      "kernel": [
+        [1, 4, 6, 4, 1],
+        [4, 16, 24, 16, 4],
+        [6, 24, 36, 24, 6],
+        [4, 16, 24, 16, 4],
+        [1, 4, 6, 4, 1]
+      ]
+    },
+    {
+      "name": "sharpen",
+      "label": "Sharpen 3x3",
+      "rows": 3,
+      "cols": 3,
+      "normalize": false,
+      "kernel": [
+        [0, -1, 0],
+        [-1, 5, -1],
+        [0, -1, 0]
+      ]
+    },
+    {
+      "name": "edge_detect",
+      "label": "Edge Detect 3x3",
+      "rows": 3,
+      "cols": 3,
+      "normalize": false,
+      "kernel": [
+        [-1, -1, -1],
+        [-1, 8, -1],
+        [-1, -1, -1]
+      ]
+    }
+  ]
+}

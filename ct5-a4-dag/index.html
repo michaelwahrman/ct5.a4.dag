@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CT5.A4.DAG</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app-shell" id="appShell">
+
+  <div class="topbar">
+    <span class="app-title">CT5.A4.DAG</span>
+    <span class="scene-name" id="sceneNameLabel">(no scene)</span>
+
+    <button class="dag-btn primary" id="btnNewScene">New Scene</button>
+    <button class="dag-btn" id="btnLoadScene">Load Scene…</button>
+    <button class="dag-btn" id="btnSaveScene">Save Scene</button>
+    <button class="dag-btn" id="btnSaveSceneAs">Save As…</button>
+
+    <div class="topbar-sep"></div>
+
+    <button class="dag-btn" id="btnLoadNodeTypes">Load Node Types…</button>
+    <button class="dag-btn" id="btnLoadFilters">Load Filters…</button>
+
+    <div class="topbar-sep"></div>
+
+    <button class="dag-btn" id="btnFitView">Fit View</button>
+  </div>
+
+  <div class="palette" id="palette">
+    <h3>Node Types</h3>
+    <div id="paletteList"></div>
+  </div>
+
+  <div class="canvas-wrap" id="canvasWrap">
+    <div class="canvas-hint">
+      Click: select &middot; Drag node: move &middot; Drag from a port: connect &middot;
+      Scroll: zoom &middot; Shift+Scroll or drag empty space: pan &middot; Delete: remove selection
+    </div>
+  </div>
+
+  <div class="inspector">
+    <div class="inspector-tabs">
+      <div class="inspector-tab active" data-tab="props">Properties</div>
+      <div class="inspector-tab" data-tab="json">Scene JSON</div>
+      <div class="inspector-tab" data-tab="python">Python Preview</div>
+    </div>
+    <div class="inspector-body" id="inspectorBody"></div>
+  </div>
+
+  <div id="timelineContainer"></div>
+
+</div>
+
+<div id="modalRoot"></div>
+
+<!-- three.js, vendored locally (no network fetch at runtime) -->
+<script src="vendor/three.min.js"></script>
+
+<script src="js/util.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/pygen.js"></script>
+<script src="js/graph3d.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/defaults-data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
